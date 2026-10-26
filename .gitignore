@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node / herramientas
+node_modules/
+npm-debug.log*
+*.log
+.cache/
+coverage/
+
+# Variables y credenciales locales
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Salidas temporales del despliegue
+.aws-deployment.json
+deployment-outputs.json
+infra/packaged.yaml
+
+# Archivos temporales
+tmp-*
+*.tmp
+*~
+# Metadatos de agentes locales
+.agents/
