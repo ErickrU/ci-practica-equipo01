@@ -1,0 +1,103 @@
+test	Ejecutar pruebas	﻿2026-10-26T22:51:58.0723681Z ##[group]Run npm test
+test	Ejecutar pruebas	2026-10-26T22:51:58.0724773Z ^[[36;1mnpm test^[[0m
+test	Ejecutar pruebas	2026-10-26T22:51:58.0791357Z shell: /usr/bin/bash -e {0}
+test	Ejecutar pruebas	2026-10-26T22:51:58.0792767Z ##[endgroup]
+test	Ejecutar pruebas	2026-10-26T22:51:58.2120891Z 
+test	Ejecutar pruebas	2026-10-26T22:51:58.2123109Z > ci-practica-equipo01@1.1.0 test
+test	Ejecutar pruebas	2026-10-26T22:51:58.2126240Z > node --test --test-reporter=spec
+test	Ejecutar pruebas	2026-10-26T22:51:58.2128046Z 
+test	Ejecutar pruebas	2026-10-26T22:51:58.3714923Z ▶ catálogo de varillas y estribos
+test	Ejecutar pruebas	2026-10-26T22:51:58.3718925Z   ✔ buscarVarilla devuelve la varilla por id y undefined si no existe (0.723812ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3742691Z   ✔ estriboPara: 3/8" hasta barras de 1" y 1/2" para barras mayores (E.060 7.10.5.1) (0.163205ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3768709Z   ✔ separacionMinima es el mayor entre 1,5·db y 4 cm (E.060 7.6.3) (0.280283ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3772922Z ✔ catálogo de varillas y estribos (2.233491ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3775794Z ▶ validar
+test	Ejecutar pruebas	2026-10-26T22:51:58.3778739Z   ✔ una entrada completa y coherente no produce errores (0.750661ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3783572Z   ✔ detecta dimensiones faltantes según el tipo de columna (0.368568ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3787930Z   ✔ rechaza una cuantía fuera de 1 %–6 % (E.060 10.9.1) (0.206726ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3792044Z   ✔ exige fy > 0,85·f'c, un método de cálculo y una varilla conocida (0.394076ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3796282Z   ✔ el método por carga exige una carga Pu positiva (0.37489ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3799319Z ✔ validar (2.525075ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3801603Z ▶ numeroBarras
+test	Ejecutar pruebas	2026-10-26T22:51:58.3804554Z   ✔ redondea hacia arriba el cociente As / Abarra (0.287687ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3808763Z   ✔ aplica el mínimo normativo: 4 con estribos y 6 con espiral (E.060 10.9.2) (0.346246ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3821678Z   ✔ en secciones rectangulares un resultado impar sube a par por simetría (0.127298ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3828556Z   ✔ en secciones circulares se conserva el número impar (0.098143ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3848081Z ✔ numeroBarras (1.981129ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3911377Z ▶ distribuir
+test	Ejecutar pruebas	2026-10-26T22:51:58.3914975Z   ✔ rectangular 30 × 50 con 8 barras: 3 por cara, esquinas compartidas (0.155851ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3920998Z   ✔ circular: las barras quedan sobre el mismo radio y la cuerda define la separación (0.325468ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3925373Z ✔ distribuir (0.570996ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3928531Z ▶ resistenciaAxial
+test	Ejecutar pruebas	2026-10-26T22:51:58.3931574Z   ✖ φPn,máx = α φ [0,85 f'c (Ag − Ast) + fy Ast] en tonf (E.060 10.3.6) (1.905618ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3936162Z   ✖ a mayor área de acero, mayor resistencia (5.083592ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3939089Z ✖ resistenciaAxial (7.147677ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3943616Z ▶ calcularColumna · ejemplo reproducible (docs/CALCULATIONS.md §7)
+test	Ejecutar pruebas	2026-10-26T22:51:58.3947378Z   ✔ 30 × 50 cm, ρ = 1 %, 5/8" → 8 varillas (0.167963ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4084489Z   ✔ selecciona estribo de 3/8" y distribuye 3 barras por cara (0.10733ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4090235Z   ✔ no emite advertencias: cumple separación, dimensiones, recubrimiento y f'c (0.087153ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4096308Z   ✔ propone una alternativa por cada diámetro y marca la actual (0.106038ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4101345Z ✔ calcularColumna · ejemplo reproducible (docs/CALCULATIONS.md §7) (0.607996ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4105745Z ▶ calcularColumna · otros casos
+test	Ejecutar pruebas	2026-10-26T22:51:58.4108877Z   ✔ 25 × 25 cm, ρ = 1 %, 1/2" → 6 varillas por simetría (0.239327ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4113418Z   ✔ circular con espiral D = 40 cm, ρ = 1 %, 3/4" → gobierna el mínimo de 6 barras (0.262911ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4118738Z   ✔ método por carga: con Pu pequeña gobierna la cuantía mínima y la capacidad cumple (0.820382ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4124124Z   ✔ método por carga: una Pu excesiva exige ρ > 6 % y la sección se declara insuficiente (31.010285ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4131778Z   ✔ advierte cuando la dimensión menor, el recubrimiento o f'c no cumplen el capítulo sísmico (0.378497ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4137191Z   ✔ una entrada inválida devuelve ok = false con los errores de validar (0.182721ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4139818Z ✔ calcularColumna · otros casos (33.113451ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4207295Z ℹ tests 26
+test	Ejecutar pruebas	2026-10-26T22:51:58.4209298Z ℹ suites 7
+test	Ejecutar pruebas	2026-10-26T22:51:58.4214452Z ℹ pass 24
+test	Ejecutar pruebas	2026-10-26T22:51:58.4216014Z ℹ fail 2
+test	Ejecutar pruebas	2026-10-26T22:51:58.4217592Z ℹ cancelled 0
+test	Ejecutar pruebas	2026-10-26T22:51:58.4219103Z ℹ skipped 0
+test	Ejecutar pruebas	2026-10-26T22:51:58.4220569Z ℹ todo 0
+test	Ejecutar pruebas	2026-10-26T22:51:58.4222205Z ℹ duration_ms 173.396307
+test	Ejecutar pruebas	2026-10-26T22:51:58.4223747Z 
+test	Ejecutar pruebas	2026-10-26T22:51:58.4224521Z ✖ failing tests:
+test	Ejecutar pruebas	2026-10-26T22:51:58.4225476Z 
+test	Ejecutar pruebas	2026-10-26T22:51:58.4226520Z test at test/calculo.test.mjs:147:3
+test	Ejecutar pruebas	2026-10-26T22:51:58.4229679Z ✖ φPn,máx = α φ [0,85 f'c (Ag − Ast) + fy Ast] en tonf (E.060 10.3.6) (1.905618ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4233623Z   AssertionError [ERR_ASSERTION]: 110.70863999999999 ≠ 185.97264 (±0.000001)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4237602Z       at casiIgual (file:///home/runner/work/ci-practica-equipo01/ci-practica-equipo01/test/calculo.test.mjs:44:10)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4241416Z       at TestContext.<anonymous> (file:///home/runner/work/ci-practica-equipo01/ci-practica-equipo01/test/calculo.test.mjs:149:5)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4247751Z       at Test.runInAsyncScope (node:async_hooks:214:14)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4250294Z       at Test.run (node:internal/test_runner/test:1047:25)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4253204Z       at Test.start (node:internal/test_runner/test:944:17)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4255605Z       at node:internal/test_runner/test:1440:71
+test	Ejecutar pruebas	2026-10-26T22:51:58.4258015Z       at node:internal/per_context/primordials:466:82
+test	Ejecutar pruebas	2026-10-26T22:51:58.4260311Z       at new Promise (<anonymous>)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4263025Z       at new SafePromise (node:internal/per_context/primordials:435:3)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4265912Z       at node:internal/per_context/primordials:466:9 {
+test	Ejecutar pruebas	2026-10-26T22:51:58.4268168Z     generatedMessage: false,
+test	Ejecutar pruebas	2026-10-26T22:51:58.4269919Z     code: 'ERR_ASSERTION',
+test	Ejecutar pruebas	2026-10-26T22:51:58.4271638Z     actual: false,
+test	Ejecutar pruebas	2026-10-26T22:51:58.4273407Z     expected: true,
+test	Ejecutar pruebas	2026-10-26T22:51:58.4274939Z     operator: '==',
+test	Ejecutar pruebas	2026-10-26T22:51:58.4276469Z     diff: 'simple'
+test	Ejecutar pruebas	2026-10-26T22:51:58.4277978Z   }
+test	Ejecutar pruebas	2026-10-26T22:51:58.4278806Z 
+test	Ejecutar pruebas	2026-10-26T22:51:58.4279743Z test at test/calculo.test.mjs:152:3
+test	Ejecutar pruebas	2026-10-26T22:51:58.4282692Z ✖ a mayor área de acero, mayor resistencia (5.083592ms)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4285882Z   AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+test	Ejecutar pruebas	2026-10-26T22:51:58.4288579Z   
+test	Ejecutar pruebas	2026-10-26T22:51:58.4290146Z     assert.ok(conAcero > sinAcero)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4291970Z   
+test	Ejecutar pruebas	2026-10-26T22:51:58.4295963Z       at TestContext.<anonymous> (file:///home/runner/work/ci-practica-equipo01/ci-practica-equipo01/test/calculo.test.mjs:155:12)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4300641Z       at Test.runInAsyncScope (node:async_hooks:214:14)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4303688Z       at Test.run (node:internal/test_runner/test:1047:25)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4307058Z       at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4310792Z       at Test.postRun (node:internal/test_runner/test:1173:19)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4313860Z       at Test.run (node:internal/test_runner/test:1101:12)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4317991Z       at async Promise.all (index 0)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4320474Z       at async Suite.run (node:internal/test_runner/test:1442:7)
+test	Ejecutar pruebas	2026-10-26T22:51:58.4324521Z       at async Test.processPendingSubtests (node:internal/test_runner/test:744:7) {
+test	Ejecutar pruebas	2026-10-26T22:51:58.4327195Z     generatedMessage: true,
+test	Ejecutar pruebas	2026-10-26T22:51:58.4328925Z     code: 'ERR_ASSERTION',
+test	Ejecutar pruebas	2026-10-26T22:51:58.4330572Z     actual: false,
+test	Ejecutar pruebas	2026-10-26T22:51:58.4332041Z     expected: true,
+test	Ejecutar pruebas	2026-10-26T22:51:58.4333780Z     operator: '==',
+test	Ejecutar pruebas	2026-10-26T22:51:58.4335249Z     diff: 'simple'
+test	Ejecutar pruebas	2026-10-26T22:51:58.4336639Z   }
+test	Ejecutar pruebas	2026-10-26T22:51:58.4377536Z ##[error]Process completed with exit code 1.

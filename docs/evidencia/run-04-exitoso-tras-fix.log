@@ -1,0 +1,204 @@
+test	Set up job	﻿2026-10-26T22:52:54.8293914Z Current runner version: '2.338.0'
+test	Set up job	2026-10-26T22:52:54.8325543Z ##[group]Runner Image Provisioner
+test	Set up job	2026-10-26T22:52:54.8327554Z Hosted Compute Agent
+test	Set up job	2026-10-26T22:52:54.8328400Z Version: 20261021.618
+test	Set up job	2026-10-26T22:52:54.8329172Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+test	Set up job	2026-10-26T22:52:54.8330032Z Build Date: 2026-10-21T00:45:21Z
+test	Set up job	2026-10-26T22:52:54.8330907Z Worker ID: {cc1e6312-d454-407f-a734-280e4ba8f803}
+test	Set up job	2026-10-26T22:52:54.8331751Z Region: westus3
+test	Set up job	2026-10-26T22:52:54.8332434Z Cloud: Azure
+test	Set up job	2026-10-26T22:52:54.8333192Z ##[endgroup]
+test	Set up job	2026-10-26T22:52:54.8334718Z ##[group]Operating System
+test	Set up job	2026-10-26T22:52:54.8335765Z Ubuntu
+test	Set up job	2026-10-26T22:52:54.8336471Z 24.04.5
+test	Set up job	2026-10-26T22:52:54.8337140Z LTS
+test	Set up job	2026-10-26T22:52:54.8337917Z ##[endgroup]
+test	Set up job	2026-10-26T22:52:54.8338598Z ##[group]Runner Image
+test	Set up job	2026-10-26T22:52:54.8339364Z Image: ubuntu-24.04
+test	Set up job	2026-10-26T22:52:54.8340063Z Version: 20261012.334.1
+test	Set up job	2026-10-26T22:52:54.8341433Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+test	Set up job	2026-10-26T22:52:54.8343542Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+test	Set up job	2026-10-26T22:52:54.8344744Z ##[endgroup]
+test	Set up job	2026-10-26T22:52:54.8346713Z ##[group]GITHUB_TOKEN Permissions
+test	Set up job	2026-10-26T22:52:54.8348950Z Contents: read
+test	Set up job	2026-10-26T22:52:54.8349741Z Metadata: read
+test	Set up job	2026-10-26T22:52:54.8350445Z ##[endgroup]
+test	Set up job	2026-10-26T22:52:54.8352701Z Secret source: Actions
+test	Set up job	2026-10-26T22:52:54.8354359Z Cache mode: write
+test	Set up job	2026-10-26T22:52:54.8355479Z Prepare workflow directory
+test	Set up job	2026-10-26T22:52:54.8785966Z Prepare all required actions
+test	Set up job	2026-10-26T22:52:54.8843713Z Getting action download info
+test	Set up job	2026-10-26T22:52:55.2185378Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test	Set up job	2026-10-26T22:52:55.3228410Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+test	Set up job	2026-10-26T22:52:55.5943356Z Complete job name: test
+test	Run actions/checkout@v4	﻿2026-10-26T22:52:55.6593465Z ##[group]Run actions/checkout@v4
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6594147Z with:
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6594529Z   repository: ErickrU/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6597999Z   token: ***
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6598355Z   ssh-strict: true
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6598717Z   ssh-user: git
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6599068Z   persist-credentials: true
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6599449Z   clean: true
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6599804Z   sparse-checkout-cone-mode: true
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6600214Z   fetch-depth: 1
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6600550Z   fetch-tags: false
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6600896Z   show-progress: true
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6601243Z   lfs: false
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6601569Z   submodules: false
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6601923Z   set-safe-directory: true
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6602315Z   allow-unsafe-pr-checkout: false
+test	Run actions/checkout@v4	2026-10-26T22:52:55.6602874Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9012086Z Syncing repository: ErickrU/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9032188Z ##[group]Getting Git version info
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9034189Z Working directory is '/home/runner/work/ci-practica-equipo01/ci-practica-equipo01'
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9037203Z [command]/usr/bin/git version
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9109770Z git version 2.55.0
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9142309Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9149696Z Temporarily overriding HOME='/home/runner/work/_temp/e2a8b6e8-1f0d-4b85-ab05-a15f451bb320' before making global git config changes
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9151937Z Adding repository directory to the temporary git global config as a safe directory
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9153942Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ci-practica-equipo01/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9250980Z Deleting the contents of '/home/runner/work/ci-practica-equipo01/ci-practica-equipo01'
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9253365Z ##[group]Initializing the repository
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9259000Z [command]/usr/bin/git init /home/runner/work/ci-practica-equipo01/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9337595Z hint: Using 'master' as the name for the initial branch. This default branch name
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9360779Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9376405Z hint: to use in all of your new repositories, which will suppress this warning,
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9390144Z hint: call:
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9396001Z hint:
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9396968Z hint: 	git config --global init.defaultBranch <name>
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9398144Z hint:
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9399634Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9402672Z hint: 'development'. The just-created branch can be renamed via this command:
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9411922Z hint:
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9415802Z hint: 	git branch -m <name>
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9419859Z hint:
+test	Run actions/checkout@v4	2026-10-26T22:52:55.9438025Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0197292Z Initialized empty Git repository in /home/runner/work/ci-practica-equipo01/ci-practica-equipo01/.git/
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0225823Z [command]/usr/bin/git remote add origin https://github.com/ErickrU/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0228990Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0230210Z ##[group]Disabling automatic garbage collection
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0231271Z [command]/usr/bin/git config --local gc.auto 0
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0233642Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0234718Z ##[group]Setting up auth
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0236075Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0239362Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0476383Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0510412Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0869817Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Run actions/checkout@v4	2026-10-26T22:52:56.0875912Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Run actions/checkout@v4	2026-10-26T22:52:56.1035322Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test	Run actions/checkout@v4	2026-10-26T22:52:56.2498996Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:52:56.2500217Z ##[group]Fetching the repository
+test	Run actions/checkout@v4	2026-10-26T22:52:56.2547221Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b63a6ae19d1df0f71e2c17082236c4e8e62a7ab7:refs/remotes/origin/main
+test	Run actions/checkout@v4	2026-10-26T22:52:56.8863390Z From https://github.com/ErickrU/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:52:56.8864436Z  * [new ref]         b63a6ae19d1df0f71e2c17082236c4e8e62a7ab7 -> origin/main
+test	Run actions/checkout@v4	2026-10-26T22:52:56.8868160Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:52:56.8869741Z ##[group]Determining the checkout info
+test	Run actions/checkout@v4	2026-10-26T22:52:56.8871311Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:52:56.8872319Z [command]/usr/bin/git sparse-checkout disable
+test	Run actions/checkout@v4	2026-10-26T22:52:56.8914545Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test	Run actions/checkout@v4	2026-10-26T22:52:56.8944343Z ##[group]Checking out the ref
+test	Run actions/checkout@v4	2026-10-26T22:52:56.8956935Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+test	Run actions/checkout@v4	2026-10-26T22:52:56.9042827Z Switched to a new branch 'main'
+test	Run actions/checkout@v4	2026-10-26T22:52:56.9048196Z branch 'main' set up to track 'origin/main'.
+test	Run actions/checkout@v4	2026-10-26T22:52:56.9056639Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:52:56.9093202Z [command]/usr/bin/git log -1 --format=%H
+test	Run actions/checkout@v4	2026-10-26T22:52:56.9116689Z b63a6ae19d1df0f71e2c17082236c4e8e62a7ab7
+test	Instalar Node.js	﻿2026-10-26T22:52:56.9444753Z ##[group]Run actions/setup-node@v4
+test	Instalar Node.js	2026-10-26T22:52:56.9445821Z with:
+test	Instalar Node.js	2026-10-26T22:52:56.9446512Z   node-version: 22
+test	Instalar Node.js	2026-10-26T22:52:56.9447258Z   always-auth: false
+test	Instalar Node.js	2026-10-26T22:52:56.9448034Z   check-latest: false
+test	Instalar Node.js	2026-10-26T22:52:56.9456078Z   token: ***
+test	Instalar Node.js	2026-10-26T22:52:56.9457016Z ##[endgroup]
+test	Instalar Node.js	2026-10-26T22:52:57.0737136Z (node:1967) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Instalar Node.js	2026-10-26T22:52:57.0768233Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Instalar Node.js	2026-10-26T22:52:57.0787350Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+test	Instalar Node.js	2026-10-26T22:52:57.0807274Z ##[group]Environment details
+test	Instalar Node.js	2026-10-26T22:52:57.4546880Z node: v22.23.3
+test	Instalar Node.js	2026-10-26T22:52:57.4548046Z npm: 10.9.9
+test	Instalar Node.js	2026-10-26T22:52:57.4548610Z yarn: 1.22.22
+test	Instalar Node.js	2026-10-26T22:52:57.4549501Z ##[endgroup]
+test	Verificar sintaxis y manifest	﻿2026-10-26T22:52:57.4705708Z ##[group]Run npm run check
+test	Verificar sintaxis y manifest	2026-10-26T22:52:57.4706038Z ^[[36;1mnpm run check^[[0m
+test	Verificar sintaxis y manifest	2026-10-26T22:52:57.4902832Z shell: /usr/bin/bash -e {0}
+test	Verificar sintaxis y manifest	2026-10-26T22:52:57.4903086Z ##[endgroup]
+test	Verificar sintaxis y manifest	2026-10-26T22:52:57.6328086Z 
+test	Verificar sintaxis y manifest	2026-10-26T22:52:57.6335895Z > ci-practica-equipo01@1.1.0 check
+test	Verificar sintaxis y manifest	2026-10-26T22:52:57.6337069Z > node --check js/calculo.js && node --check js/app.js && node --check js/registro-sw.js && node --check js/widgets.js && node --check sw.js && node --check herramientas/servidor.mjs && node -e "JSON.parse(require('fs').readFileSync('manifest.webmanifest', 'utf8'))"
+test	Verificar sintaxis y manifest	2026-10-26T22:52:57.6337819Z 
+test	Ejecutar pruebas	﻿2026-10-26T22:52:57.7914502Z ##[group]Run npm test
+test	Ejecutar pruebas	2026-10-26T22:52:57.7914764Z ^[[36;1mnpm test^[[0m
+test	Ejecutar pruebas	2026-10-26T22:52:57.7972180Z shell: /usr/bin/bash -e {0}
+test	Ejecutar pruebas	2026-10-26T22:52:57.7972430Z ##[endgroup]
+test	Ejecutar pruebas	2026-10-26T22:52:57.8950688Z 
+test	Ejecutar pruebas	2026-10-26T22:52:57.8951566Z > ci-practica-equipo01@1.1.0 test
+test	Ejecutar pruebas	2026-10-26T22:52:57.8952628Z > node --test --test-reporter=spec
+test	Ejecutar pruebas	2026-10-26T22:52:57.8953225Z 
+test	Ejecutar pruebas	2026-10-26T22:52:58.0102507Z ▶ catálogo de varillas y estribos
+test	Ejecutar pruebas	2026-10-26T22:52:58.0103664Z   ✔ buscarVarilla devuelve la varilla por id y undefined si no existe (0.567192ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0104875Z   ✔ estriboPara: 3/8" hasta barras de 1" y 1/2" para barras mayores (E.060 7.10.5.1) (0.113611ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0135575Z   ✔ separacionMinima es el mayor entre 1,5·db y 4 cm (E.060 7.6.3) (0.233641ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0136773Z ✔ catálogo de varillas y estribos (1.667716ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0137591Z ▶ validar
+test	Ejecutar pruebas	2026-10-26T22:52:58.0138602Z   ✔ una entrada completa y coherente no produce errores (0.554654ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0139773Z   ✔ detecta dimensiones faltantes según el tipo de columna (0.285308ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0140984Z   ✔ rechaza una cuantía fuera de 1 %–6 % (E.060 10.9.1) (0.148583ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0142164Z   ✔ exige fy > 0,85·f'c, un método de cálculo y una varilla conocida (0.287121ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0145531Z   ✔ el método por carga exige una carga Pu positiva (0.239179ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0151194Z ✔ validar (1.794196ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0169320Z ▶ numeroBarras
+test	Ejecutar pruebas	2026-10-26T22:52:58.0170138Z   ✔ redondea hacia arriba el cociente As / Abarra (0.208824ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0192571Z   ✔ aplica el mínimo normativo: 4 con estribos y 6 con espiral (E.060 10.9.2) (0.233972ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0197513Z   ✔ en secciones rectangulares un resultado impar sube a par por simetría (0.087422ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0226031Z   ✔ en secciones circulares se conserva el número impar (0.063525ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0246621Z ✔ numeroBarras (1.468397ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0257914Z ▶ distribuir
+test	Ejecutar pruebas	2026-10-26T22:52:58.0258969Z   ✔ rectangular 30 × 50 con 8 barras: 3 por cara, esquinas compartidas (0.115144ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0276319Z   ✔ circular: las barras quedan sobre el mismo radio y la cuerda define la separación (0.217808ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0288360Z ✔ distribuir (0.397497ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0289103Z ▶ resistenciaAxial
+test	Ejecutar pruebas	2026-10-26T22:52:58.0289987Z   ✔ φPn,máx = α φ [0,85 f'c (Ag − Ast) + fy Ast] en tonf (E.060 10.3.6) (0.114462ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0291099Z   ✔ a mayor área de acero, mayor resistencia (0.0599ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0291962Z ✔ resistenciaAxial (0.233781ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0292937Z ▶ calcularColumna · ejemplo reproducible (docs/CALCULATIONS.md §7)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0293997Z   ✔ 30 × 50 cm, ρ = 1 %, 5/8" → 8 varillas (0.096986ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0295006Z   ✔ selecciona estribo de 3/8" y distribuye 3 barras por cara (0.062324ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0296836Z   ✔ no emite advertencias: cumple separación, dimensiones, recubrimiento y f'c (0.048433ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0298149Z   ✔ propone una alternativa por cada diámetro y marca la actual (0.588414ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0299486Z ✔ calcularColumna · ejemplo reproducible (docs/CALCULATIONS.md §7) (0.881495ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0300518Z ▶ calcularColumna · otros casos
+test	Ejecutar pruebas	2026-10-26T22:52:58.0301386Z   ✔ 25 × 25 cm, ρ = 1 %, 1/2" → 6 varillas por simetría (0.174863ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0308730Z   ✔ circular con espiral D = 40 cm, ρ = 1 %, 3/4" → gobierna el mínimo de 6 barras (0.204888ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0320642Z   ✔ método por carga: con Pu pequeña gobierna la cuantía mínima y la capacidad cumple (0.110346ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0321817Z   ✔ método por carga: una Pu excesiva exige ρ > 6 % y la sección se declara insuficiente (22.110115ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0323165Z   ✔ advierte cuando la dimensión menor, el recubrimiento o f'c no cumplen el capítulo sísmico (0.333271ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0324290Z   ✔ una entrada inválida devuelve ok = false con los errores de validar (0.120351ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0325713Z ✔ calcularColumna · otros casos (23.20476ms)
+test	Ejecutar pruebas	2026-10-26T22:52:58.0423430Z ℹ tests 26
+test	Ejecutar pruebas	2026-10-26T22:52:58.0424116Z ℹ suites 7
+test	Ejecutar pruebas	2026-10-26T22:52:58.0424648Z ℹ pass 26
+test	Ejecutar pruebas	2026-10-26T22:52:58.0425113Z ℹ fail 0
+test	Ejecutar pruebas	2026-10-26T22:52:58.0426273Z ℹ cancelled 0
+test	Ejecutar pruebas	2026-10-26T22:52:58.0426825Z ℹ skipped 0
+test	Ejecutar pruebas	2026-10-26T22:52:58.0427349Z ℹ todo 0
+test	Ejecutar pruebas	2026-10-26T22:52:58.0427904Z ℹ duration_ms 118.837589
+test	Post Instalar Node.js	﻿2026-10-26T22:52:58.0611777Z Post job cleanup.
+test	Post Instalar Node.js	2026-10-26T22:52:58.1623153Z (node:2090) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Post Instalar Node.js	2026-10-26T22:52:58.1624288Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Post Run actions/checkout@v4	﻿2026-10-26T22:52:58.1847772Z Post job cleanup.
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.2735594Z [command]/usr/bin/git version
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.2774226Z git version 2.55.0
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.2839078Z Temporarily overriding HOME='/home/runner/work/_temp/0e38e33a-74ee-4300-b004-851e03f0f78b' before making global git config changes
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.2840357Z Adding repository directory to the temporary git global config as a safe directory
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.2841643Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ci-practica-equipo01/ci-practica-equipo01
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.2902126Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.2993301Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.3686383Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.3752392Z http.https://github.com/.extraheader
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.3806299Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.3917082Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.4157345Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Post Run actions/checkout@v4	2026-10-26T22:52:58.4191399Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Complete job	﻿2026-10-26T22:52:58.4532204Z Cleaning up orphan processes
+test	Complete job	2026-10-26T22:52:58.4847136Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

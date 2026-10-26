@@ -1,0 +1,20 @@
+commit 75b3a816ddb6d49aba991cb8011fb030c5edff80
+Author: Erick Alexander Rangel Urbina
+Date: Mon Oct 26 16:51:45 2026 -0600
+
+    Error intencional: restar en lugar de sumar el aporte del acero en resistenciaAxial
+
+
+diff --git a/js/calculo.js b/js/calculo.js
+index 80fc051..3cf11a6 100644
+--- a/js/calculo.js
++++ b/js/calculo.js
+@@ -219,7 +219,7 @@ export function distribuir(seccion, n, varilla, estribo, recubrimiento) {
+ 
+ /** φPn,máx en tonf para compresión axial pura (E.060 10.3.6). */
+ export function resistenciaAxial(tipo, ag, ast, fc, fy) {
+-  return (tipo.alfa * tipo.phi * (0.85 * fc * (ag - ast) + fy * ast)) / 1000;
++  return (tipo.alfa * tipo.phi * (0.85 * fc * (ag - ast) - fy * ast)) / 1000;
+ }
+ 
+ /* ==========================================================================

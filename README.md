@@ -103,7 +103,8 @@ ci-practica-equipo01/
 │   ├── ISSUE_TEMPLATE/      Plantillas de issues
 │   └── pull_request_template.md
 ├── docs/
-│   ├── EVIDENCIA-CI.md      Evidencia de las fases 4 y 5 y conclusiones individuales
+│   ├── EVIDENCIA-CI.md      Evidencia de las fases 1 a 5 y conclusiones individuales
+│   ├── evidencia/           Logs descargados de cada run y diff del error intencional
 │   ├── ARCHITECTURE.md      Componentes, decisiones y pipeline
 │   └── CALCULATIONS.md      Fórmulas, unidades y limitaciones
 ├── test/

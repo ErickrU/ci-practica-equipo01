@@ -1,0 +1,371 @@
+test	Set up job	﻿2026-10-26T22:49:39.9185023Z Current runner version: '2.338.0'
+test	Set up job	2026-10-26T22:49:39.9221989Z ##[group]Runner Image Provisioner
+test	Set up job	2026-10-26T22:49:39.9223485Z Hosted Compute Agent
+test	Set up job	2026-10-26T22:49:39.9224716Z Version: 20261021.618
+test	Set up job	2026-10-26T22:49:39.9226038Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+test	Set up job	2026-10-26T22:49:39.9227508Z Build Date: 2026-10-21T00:45:21Z
+test	Set up job	2026-10-26T22:49:39.9229206Z Worker ID: {fedb793c-4f6d-42a2-b3d2-dda07184855d}
+test	Set up job	2026-10-26T22:49:39.9238962Z Region: westus2
+test	Set up job	2026-10-26T22:49:39.9240191Z Cloud: Azure
+test	Set up job	2026-10-26T22:49:39.9241186Z ##[endgroup]
+test	Set up job	2026-10-26T22:49:39.9243704Z ##[group]Operating System
+test	Set up job	2026-10-26T22:49:39.9244852Z Ubuntu
+test	Set up job	2026-10-26T22:49:39.9245887Z 24.04.5
+test	Set up job	2026-10-26T22:49:39.9246915Z LTS
+test	Set up job	2026-10-26T22:49:39.9247813Z ##[endgroup]
+test	Set up job	2026-10-26T22:49:39.9249188Z ##[group]Runner Image
+test	Set up job	2026-10-26T22:49:39.9250304Z Image: ubuntu-24.04
+test	Set up job	2026-10-26T22:49:39.9251467Z Version: 20261012.334.1
+test	Set up job	2026-10-26T22:49:39.9253510Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+test	Set up job	2026-10-26T22:49:39.9256676Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+test	Set up job	2026-10-26T22:49:39.9268929Z ##[endgroup]
+test	Set up job	2026-10-26T22:49:39.9271195Z ##[group]GITHUB_TOKEN Permissions
+test	Set up job	2026-10-26T22:49:39.9274199Z Contents: read
+test	Set up job	2026-10-26T22:49:39.9275501Z Metadata: read
+test	Set up job	2026-10-26T22:49:39.9276502Z ##[endgroup]
+test	Set up job	2026-10-26T22:49:39.9279850Z Secret source: Actions
+test	Set up job	2026-10-26T22:49:39.9282250Z Cache mode: write
+test	Set up job	2026-10-26T22:49:39.9283834Z Prepare workflow directory
+test	Set up job	2026-10-26T22:49:39.9863065Z Prepare all required actions
+test	Set up job	2026-10-26T22:49:39.9937166Z Getting action download info
+test	Set up job	2026-10-26T22:49:40.4077842Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test	Set up job	2026-10-26T22:49:40.5137427Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+test	Set up job	2026-10-26T22:49:40.7171969Z Complete job name: test
+test	Run actions/checkout@v4	﻿2026-10-26T22:49:40.8023941Z ##[group]Run actions/checkout@v4
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8024879Z with:
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8025365Z   repository: ErickrU/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8029864Z   token: ***
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8030313Z   ssh-strict: true
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8030766Z   ssh-user: git
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8031223Z   persist-credentials: true
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8031729Z   clean: true
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8032182Z   sparse-checkout-cone-mode: true
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8032714Z   fetch-depth: 1
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8033152Z   fetch-tags: false
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8033602Z   show-progress: true
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8034041Z   lfs: false
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8034449Z   submodules: false
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8034900Z   set-safe-directory: true
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8035412Z   allow-unsafe-pr-checkout: false
+test	Run actions/checkout@v4	2026-10-26T22:49:40.8036203Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:49:41.0982269Z Syncing repository: ErickrU/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:49:41.0985923Z ##[group]Getting Git version info
+test	Run actions/checkout@v4	2026-10-26T22:49:41.0987985Z Working directory is '/home/runner/work/ci-practica-equipo01/ci-practica-equipo01'
+test	Run actions/checkout@v4	2026-10-26T22:49:41.0991101Z [command]/usr/bin/git version
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1129186Z git version 2.55.0
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1209766Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1240183Z Temporarily overriding HOME='/home/runner/work/_temp/81fceb23-2689-4297-b7a0-fef712ade525' before making global git config changes
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1255267Z Adding repository directory to the temporary git global config as a safe directory
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1257723Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ci-practica-equipo01/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1316312Z Deleting the contents of '/home/runner/work/ci-practica-equipo01/ci-practica-equipo01'
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1318204Z ##[group]Initializing the repository
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1319906Z [command]/usr/bin/git init /home/runner/work/ci-practica-equipo01/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1429995Z hint: Using 'master' as the name for the initial branch. This default branch name
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1445019Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1460998Z hint: to use in all of your new repositories, which will suppress this warning,
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1469750Z hint: call:
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1471015Z hint:
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1472070Z hint: 	git config --global init.defaultBranch <name>
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1473390Z hint:
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1474532Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1476339Z hint: 'development'. The just-created branch can be renamed via this command:
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1482232Z hint:
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1483265Z hint: 	git branch -m <name>
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1484295Z hint:
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1485512Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1487685Z Initialized empty Git repository in /home/runner/work/ci-practica-equipo01/ci-practica-equipo01/.git/
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1491506Z [command]/usr/bin/git remote add origin https://github.com/ErickrU/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1569774Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1591242Z ##[group]Disabling automatic garbage collection
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1609360Z [command]/usr/bin/git config --local gc.auto 0
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1642096Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1659742Z ##[group]Setting up auth
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1676885Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Run actions/checkout@v4	2026-10-26T22:49:41.1743131Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Run actions/checkout@v4	2026-10-26T22:49:41.2157709Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Run actions/checkout@v4	2026-10-26T22:49:41.2215093Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Run actions/checkout@v4	2026-10-26T22:49:41.2469617Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Run actions/checkout@v4	2026-10-26T22:49:41.2510206Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Run actions/checkout@v4	2026-10-26T22:49:41.2773161Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test	Run actions/checkout@v4	2026-10-26T22:49:41.2871793Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:49:41.2873183Z ##[group]Fetching the repository
+test	Run actions/checkout@v4	2026-10-26T22:49:41.2875865Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5e131da3ca8d8534af87869ade0eed78ea90f5aa:refs/remotes/origin/main
+test	Run actions/checkout@v4	2026-10-26T22:49:41.6817928Z From https://github.com/ErickrU/ci-practica-equipo01
+test	Run actions/checkout@v4	2026-10-26T22:49:41.6941659Z  * [new ref]         5e131da3ca8d8534af87869ade0eed78ea90f5aa -> origin/main
+test	Run actions/checkout@v4	2026-10-26T22:49:41.6963724Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:49:41.6966325Z ##[group]Determining the checkout info
+test	Run actions/checkout@v4	2026-10-26T22:49:41.6989688Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:49:41.7009298Z [command]/usr/bin/git sparse-checkout disable
+test	Run actions/checkout@v4	2026-10-26T22:49:41.7029925Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test	Run actions/checkout@v4	2026-10-26T22:49:41.7069882Z ##[group]Checking out the ref
+test	Run actions/checkout@v4	2026-10-26T22:49:41.7089885Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+test	Run actions/checkout@v4	2026-10-26T22:49:41.7127407Z Switched to a new branch 'main'
+test	Run actions/checkout@v4	2026-10-26T22:49:41.7149531Z branch 'main' set up to track 'origin/main'.
+test	Run actions/checkout@v4	2026-10-26T22:49:41.7205981Z ##[endgroup]
+test	Run actions/checkout@v4	2026-10-26T22:49:41.7219565Z [command]/usr/bin/git log -1 --format=%H
+test	Run actions/checkout@v4	2026-10-26T22:49:41.7264252Z 5e131da3ca8d8534af87869ade0eed78ea90f5aa
+test	Instalar Node.js	﻿2026-10-26T22:49:41.7656382Z ##[group]Run actions/setup-node@v4
+test	Instalar Node.js	2026-10-26T22:49:41.7657477Z with:
+test	Instalar Node.js	2026-10-26T22:49:41.7658398Z   node-version: 22
+test	Instalar Node.js	2026-10-26T22:49:41.7659238Z   always-auth: false
+test	Instalar Node.js	2026-10-26T22:49:41.7660091Z   check-latest: false
+test	Instalar Node.js	2026-10-26T22:49:41.7670022Z   token: ***
+test	Instalar Node.js	2026-10-26T22:49:41.7671025Z ##[endgroup]
+test	Instalar Node.js	2026-10-26T22:49:41.9262826Z (node:2337) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Instalar Node.js	2026-10-26T22:49:41.9268908Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+test	Instalar Node.js	2026-10-26T22:49:41.9271683Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Instalar Node.js	2026-10-26T22:49:41.9277263Z ##[group]Environment details
+test	Instalar Node.js	2026-10-26T22:49:42.4826488Z node: v22.23.3
+test	Instalar Node.js	2026-10-26T22:49:42.4827887Z npm: 10.9.9
+test	Instalar Node.js	2026-10-26T22:49:42.4829626Z yarn: 1.22.22
+test	Instalar Node.js	2026-10-26T22:49:42.4831556Z ##[endgroup]
+test	Verificar sintaxis y manifest	﻿2026-10-26T22:49:42.4995668Z ##[group]Run npm run check
+test	Verificar sintaxis y manifest	2026-10-26T22:49:42.4996151Z ^[[36;1mnpm run check^[[0m
+test	Verificar sintaxis y manifest	2026-10-26T22:49:42.5250058Z shell: /usr/bin/bash -e {0}
+test	Verificar sintaxis y manifest	2026-10-26T22:49:42.5250537Z ##[endgroup]
+test	Verificar sintaxis y manifest	2026-10-26T22:49:42.6574881Z 
+test	Verificar sintaxis y manifest	2026-10-26T22:49:42.6583149Z > ci-practica-equipo01@1.1.0 check
+test	Verificar sintaxis y manifest	2026-10-26T22:49:42.6585354Z > node --check js/calculo.js && node --check js/app.js && node --check js/registro-sw.js && node --check js/widgets.js && node --check sw.js && node --check herramientas/servidor.mjs && node -e "JSON.parse(require('fs').readFileSync('manifest.webmanifest', 'utf8'))"
+test	Verificar sintaxis y manifest	2026-10-26T22:49:42.6586467Z 
+test	Ejecutar pruebas	﻿2026-10-26T22:49:42.8522542Z ##[group]Run npm test
+test	Ejecutar pruebas	2026-10-26T22:49:42.8522905Z ^[[36;1mnpm test^[[0m
+test	Ejecutar pruebas	2026-10-26T22:49:42.8601842Z shell: /usr/bin/bash -e {0}
+test	Ejecutar pruebas	2026-10-26T22:49:42.8602573Z ##[endgroup]
+test	Ejecutar pruebas	2026-10-26T22:49:42.9827855Z 
+test	Ejecutar pruebas	2026-10-26T22:49:42.9829184Z > ci-practica-equipo01@1.1.0 test
+test	Ejecutar pruebas	2026-10-26T22:49:42.9830391Z > node --test
+test	Ejecutar pruebas	2026-10-26T22:49:42.9831141Z 
+test	Ejecutar pruebas	2026-10-26T22:49:43.0471853Z TAP version 13
+test	Ejecutar pruebas	2026-10-26T22:49:43.1719932Z # Subtest: catálogo de varillas y estribos
+test	Ejecutar pruebas	2026-10-26T22:49:43.1739671Z     # Subtest: buscarVarilla devuelve la varilla por id y undefined si no existe
+test	Ejecutar pruebas	2026-10-26T22:49:43.1741021Z     ok 1 - buscarVarilla devuelve la varilla por id y undefined si no existe
+test	Ejecutar pruebas	2026-10-26T22:49:43.1749033Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.1759299Z       duration_ms: 1.176079
+test	Ejecutar pruebas	2026-10-26T22:49:43.1789082Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.1791076Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.1809589Z     # Subtest: estriboPara: 3/8" hasta barras de 1" y 1/2" para barras mayores (E.060 7.10.5.1)
+test	Ejecutar pruebas	2026-10-26T22:49:43.1814812Z     ok 2 - estriboPara: 3/8" hasta barras de 1" y 1/2" para barras mayores (E.060 7.10.5.1)
+test	Ejecutar pruebas	2026-10-26T22:49:43.1829081Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.1837265Z       duration_ms: 0.245701
+test	Ejecutar pruebas	2026-10-26T22:49:43.1859201Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.1866677Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.1889719Z     # Subtest: separacionMinima es el mayor entre 1,5·db y 4 cm (E.060 7.6.3)
+test	Ejecutar pruebas	2026-10-26T22:49:43.1891405Z     ok 3 - separacionMinima es el mayor entre 1,5·db y 4 cm (E.060 7.6.3)
+test	Ejecutar pruebas	2026-10-26T22:49:43.1895578Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.1917232Z       duration_ms: 0.49525
+test	Ejecutar pruebas	2026-10-26T22:49:43.1938903Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.1939716Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.1959000Z     1..3
+test	Ejecutar pruebas	2026-10-26T22:49:43.1966434Z ok 1 - catálogo de varillas y estribos
+test	Ejecutar pruebas	2026-10-26T22:49:43.1989107Z   ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.1992086Z   duration_ms: 3.505686
+test	Ejecutar pruebas	2026-10-26T22:49:43.1993865Z   type: 'suite'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2013267Z   ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2029135Z # Subtest: validar
+test	Ejecutar pruebas	2026-10-26T22:49:43.2049406Z     # Subtest: una entrada completa y coherente no produce errores
+test	Ejecutar pruebas	2026-10-26T22:49:43.2069183Z     ok 1 - una entrada completa y coherente no produce errores
+test	Ejecutar pruebas	2026-10-26T22:49:43.2088857Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2109019Z       duration_ms: 1.170479
+test	Ejecutar pruebas	2026-10-26T22:49:43.2128977Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2149020Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2169424Z     # Subtest: detecta dimensiones faltantes según el tipo de columna
+test	Ejecutar pruebas	2026-10-26T22:49:43.2189059Z     ok 2 - detecta dimensiones faltantes según el tipo de columna
+test	Ejecutar pruebas	2026-10-26T22:49:43.2209052Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2209875Z       duration_ms: 0.600498
+test	Ejecutar pruebas	2026-10-26T22:49:43.2229140Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2248978Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2267652Z     # Subtest: rechaza una cuantía fuera de 1 %–6 % (E.060 10.9.1)
+test	Ejecutar pruebas	2026-10-26T22:49:43.2269903Z     ok 3 - rechaza una cuantía fuera de 1 %–6 % (E.060 10.9.1)
+test	Ejecutar pruebas	2026-10-26T22:49:43.2270829Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2271415Z       duration_ms: 0.313159
+test	Ejecutar pruebas	2026-10-26T22:49:43.2272050Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2272648Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2273697Z     # Subtest: exige fy > 0,85·f'c, un método de cálculo y una varilla conocida
+test	Ejecutar pruebas	2026-10-26T22:49:43.2275036Z     ok 4 - exige fy > 0,85·f'c, un método de cálculo y una varilla conocida
+test	Ejecutar pruebas	2026-10-26T22:49:43.2294255Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2295064Z       duration_ms: 0.595709
+test	Ejecutar pruebas	2026-10-26T22:49:43.2295904Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2296740Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2297870Z     # Subtest: el método por carga exige una carga Pu positiva
+test	Ejecutar pruebas	2026-10-26T22:49:43.2299533Z     ok 5 - el método por carga exige una carga Pu positiva
+test	Ejecutar pruebas	2026-10-26T22:49:43.2300540Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2301254Z       duration_ms: 0.529685
+test	Ejecutar pruebas	2026-10-26T22:49:43.2302002Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2302746Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2303440Z     1..5
+test	Ejecutar pruebas	2026-10-26T22:49:43.2304106Z ok 2 - validar
+test	Ejecutar pruebas	2026-10-26T22:49:43.2304811Z   ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2305495Z   duration_ms: 3.860152
+test	Ejecutar pruebas	2026-10-26T22:49:43.2306257Z   type: 'suite'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2307354Z   ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2308084Z # Subtest: numeroBarras
+test	Ejecutar pruebas	2026-10-26T22:49:43.2309391Z     # Subtest: redondea hacia arriba el cociente As / Abarra
+test	Ejecutar pruebas	2026-10-26T22:49:43.2310572Z     ok 1 - redondea hacia arriba el cociente As / Abarra
+test	Ejecutar pruebas	2026-10-26T22:49:43.2311546Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2312399Z       duration_ms: 0.448613
+test	Ejecutar pruebas	2026-10-26T22:49:43.2313217Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2314071Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2315448Z     # Subtest: aplica el mínimo normativo: 4 con estribos y 6 con espiral (E.060 10.9.2)
+test	Ejecutar pruebas	2026-10-26T22:49:43.2317138Z     ok 2 - aplica el mínimo normativo: 4 con estribos y 6 con espiral (E.060 10.9.2)
+test	Ejecutar pruebas	2026-10-26T22:49:43.2318476Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2319209Z       duration_ms: 1.951486
+test	Ejecutar pruebas	2026-10-26T22:49:43.2319981Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2320671Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2321681Z     # Subtest: en secciones rectangulares un resultado impar sube a par por simetría
+test	Ejecutar pruebas	2026-10-26T22:49:43.2322899Z     ok 3 - en secciones rectangulares un resultado impar sube a par por simetría
+test	Ejecutar pruebas	2026-10-26T22:49:43.2323605Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2323954Z       duration_ms: 0.177504
+test	Ejecutar pruebas	2026-10-26T22:49:43.2324366Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2324733Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2325413Z     # Subtest: en secciones circulares se conserva el número impar
+test	Ejecutar pruebas	2026-10-26T22:49:43.2326124Z     ok 4 - en secciones circulares se conserva el número impar
+test	Ejecutar pruebas	2026-10-26T22:49:43.2326471Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2326681Z       duration_ms: 0.140985
+test	Ejecutar pruebas	2026-10-26T22:49:43.2326929Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2327148Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2327332Z     1..4
+test	Ejecutar pruebas	2026-10-26T22:49:43.2327553Z ok 3 - numeroBarras
+test	Ejecutar pruebas	2026-10-26T22:49:43.2327775Z   ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2327982Z   duration_ms: 3.121885
+test	Ejecutar pruebas	2026-10-26T22:49:43.2328503Z   type: 'suite'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2328911Z   ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2329329Z # Subtest: distribuir
+test	Ejecutar pruebas	2026-10-26T22:49:43.2330312Z     # Subtest: rectangular 30 × 50 con 8 barras: 3 por cara, esquinas compartidas
+test	Ejecutar pruebas	2026-10-26T22:49:43.2331617Z     ok 1 - rectangular 30 × 50 con 8 barras: 3 por cara, esquinas compartidas
+test	Ejecutar pruebas	2026-10-26T22:49:43.2332377Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2332774Z       duration_ms: 0.285256
+test	Ejecutar pruebas	2026-10-26T22:49:43.2333259Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2333669Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2334647Z     # Subtest: circular: las barras quedan sobre el mismo radio y la cuerda define la separación
+test	Ejecutar pruebas	2026-10-26T22:49:43.2336000Z     ok 2 - circular: las barras quedan sobre el mismo radio y la cuerda define la separación
+test	Ejecutar pruebas	2026-10-26T22:49:43.2336795Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2337184Z       duration_ms: 0.442862
+test	Ejecutar pruebas	2026-10-26T22:49:43.2337673Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2338056Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2338883Z     1..2
+test	Ejecutar pruebas	2026-10-26T22:49:43.2339265Z ok 4 - distribuir
+test	Ejecutar pruebas	2026-10-26T22:49:43.2340043Z   ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2340429Z   duration_ms: 0.882718
+test	Ejecutar pruebas	2026-10-26T22:49:43.2340857Z   type: 'suite'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2341318Z   ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2341724Z # Subtest: resistenciaAxial
+test	Ejecutar pruebas	2026-10-26T22:49:43.2342724Z     # Subtest: φPn,máx = α φ [0,85 f'c (Ag − Ast) + fy Ast] en tonf (E.060 10.3.6)
+test	Ejecutar pruebas	2026-10-26T22:49:43.2343844Z     ok 1 - φPn,máx = α φ [0,85 f'c (Ag − Ast) + fy Ast] en tonf (E.060 10.3.6)
+test	Ejecutar pruebas	2026-10-26T22:49:43.2344544Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2344974Z       duration_ms: 0.208732
+test	Ejecutar pruebas	2026-10-26T22:49:43.2345439Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2345860Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2346567Z     # Subtest: a mayor área de acero, mayor resistencia
+test	Ejecutar pruebas	2026-10-26T22:49:43.2347420Z     ok 2 - a mayor área de acero, mayor resistencia
+test	Ejecutar pruebas	2026-10-26T22:49:43.2348009Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2348627Z       duration_ms: 0.208282
+test	Ejecutar pruebas	2026-10-26T22:49:43.2349163Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2349547Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2349932Z     1..2
+test	Ejecutar pruebas	2026-10-26T22:49:43.2350388Z ok 5 - resistenciaAxial
+test	Ejecutar pruebas	2026-10-26T22:49:43.2350809Z   ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2351190Z   duration_ms: 0.590209
+test	Ejecutar pruebas	2026-10-26T22:49:43.2351654Z   type: 'suite'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2351994Z   ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2353255Z # Subtest: calcularColumna · ejemplo reproducible (docs/CALCULATIONS.md §7)
+test	Ejecutar pruebas	2026-10-26T22:49:43.2354228Z     # Subtest: 30 × 50 cm, ρ = 1 %, 5/8" → 8 varillas
+test	Ejecutar pruebas	2026-10-26T22:49:43.2357336Z     ok 1 - 30 × 50 cm, ρ = 1 %, 5/8" → 8 varillas
+test	Ejecutar pruebas	2026-10-26T22:49:43.2357855Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2358167Z       duration_ms: 0.25514
+test	Ejecutar pruebas	2026-10-26T22:49:43.2358917Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2359268Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2359847Z     # Subtest: selecciona estribo de 3/8" y distribuye 3 barras por cara
+test	Ejecutar pruebas	2026-10-26T22:49:43.2360697Z     ok 2 - selecciona estribo de 3/8" y distribuye 3 barras por cara
+test	Ejecutar pruebas	2026-10-26T22:49:43.2361252Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2361581Z       duration_ms: 0.168387
+test	Ejecutar pruebas	2026-10-26T22:49:43.2361956Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2362280Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2363080Z     # Subtest: no emite advertencias: cumple separación, dimensiones, recubrimiento y f'c
+test	Ejecutar pruebas	2026-10-26T22:49:43.2364243Z     ok 3 - no emite advertencias: cumple separación, dimensiones, recubrimiento y f'c
+test	Ejecutar pruebas	2026-10-26T22:49:43.2364697Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2364909Z       duration_ms: 0.192021
+test	Ejecutar pruebas	2026-10-26T22:49:43.2365156Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2365364Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2365796Z     # Subtest: propone una alternativa por cada diámetro y marca la actual
+test	Ejecutar pruebas	2026-10-26T22:49:43.2366381Z     ok 4 - propone una alternativa por cada diámetro y marca la actual
+test	Ejecutar pruebas	2026-10-26T22:49:43.2366748Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2366962Z       duration_ms: 0.181811
+test	Ejecutar pruebas	2026-10-26T22:49:43.2367213Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2367423Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2367614Z     1..4
+test	Ejecutar pruebas	2026-10-26T22:49:43.2368097Z ok 6 - calcularColumna · ejemplo reproducible (docs/CALCULATIONS.md §7)
+test	Ejecutar pruebas	2026-10-26T22:49:43.2378966Z   ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2379474Z   duration_ms: 1.026919
+test	Ejecutar pruebas	2026-10-26T22:49:43.2379734Z   type: 'suite'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2379947Z   ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2380323Z # Subtest: calcularColumna · otros casos
+test	Ejecutar pruebas	2026-10-26T22:49:43.2380801Z     # Subtest: 25 × 25 cm, ρ = 1 %, 1/2" → 6 varillas por simetría
+test	Ejecutar pruebas	2026-10-26T22:49:43.2381337Z     ok 1 - 25 × 25 cm, ρ = 1 %, 1/2" → 6 varillas por simetría
+test	Ejecutar pruebas	2026-10-26T22:49:43.2381656Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2381875Z       duration_ms: 0.384352
+test	Ejecutar pruebas	2026-10-26T22:49:43.2382124Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2382400Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2382899Z     # Subtest: circular con espiral D = 40 cm, ρ = 1 %, 3/4" → gobierna el mínimo de 6 barras
+test	Ejecutar pruebas	2026-10-26T22:49:43.2383594Z     ok 2 - circular con espiral D = 40 cm, ρ = 1 %, 3/4" → gobierna el mínimo de 6 barras
+test	Ejecutar pruebas	2026-10-26T22:49:43.2383994Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2384209Z       duration_ms: 0.454675
+test	Ejecutar pruebas	2026-10-26T22:49:43.2384452Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2384663Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2385192Z     # Subtest: método por carga: con Pu pequeña gobierna la cuantía mínima y la capacidad cumple
+test	Ejecutar pruebas	2026-10-26T22:49:43.2386152Z     ok 3 - método por carga: con Pu pequeña gobierna la cuantía mínima y la capacidad cumple
+test	Ejecutar pruebas	2026-10-26T22:49:43.2386597Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2386810Z       duration_ms: 0.227026
+test	Ejecutar pruebas	2026-10-26T22:49:43.2387057Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2387267Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2387778Z     # Subtest: método por carga: una Pu excesiva exige ρ > 6 % y la sección se declara insuficiente
+test	Ejecutar pruebas	2026-10-26T22:49:43.2389131Z     ok 4 - método por carga: una Pu excesiva exige ρ > 6 % y la sección se declara insuficiente
+test	Ejecutar pruebas	2026-10-26T22:49:43.2389878Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2390225Z       duration_ms: 40.961144
+test	Ejecutar pruebas	2026-10-26T22:49:43.2390628Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2390963Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2391914Z     # Subtest: advierte cuando la dimensión menor, el recubrimiento o f'c no cumplen el capítulo sísmico
+test	Ejecutar pruebas	2026-10-26T22:49:43.2393325Z     ok 5 - advierte cuando la dimensión menor, el recubrimiento o f'c no cumplen el capítulo sísmico
+test	Ejecutar pruebas	2026-10-26T22:49:43.2394173Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2394534Z       duration_ms: 0.529375
+test	Ejecutar pruebas	2026-10-26T22:49:43.2394950Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2395496Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2396383Z     # Subtest: una entrada inválida devuelve ok = false con los errores de validar
+test	Ejecutar pruebas	2026-10-26T22:49:43.2397561Z     ok 6 - una entrada inválida devuelve ok = false con los errores de validar
+test	Ejecutar pruebas	2026-10-26T22:49:43.2398526Z       ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2408735Z       duration_ms: 0.229241
+test	Ejecutar pruebas	2026-10-26T22:49:43.2409366Z       type: 'test'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2409795Z       ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2410165Z     1..6
+test	Ejecutar pruebas	2026-10-26T22:49:43.2410846Z ok 7 - calcularColumna · otros casos
+test	Ejecutar pruebas	2026-10-26T22:49:43.2411389Z   ---
+test	Ejecutar pruebas	2026-10-26T22:49:43.2411788Z   duration_ms: 43.103177
+test	Ejecutar pruebas	2026-10-26T22:49:43.2412232Z   type: 'suite'
+test	Ejecutar pruebas	2026-10-26T22:49:43.2412627Z   ...
+test	Ejecutar pruebas	2026-10-26T22:49:43.2430068Z 1..7
+test	Ejecutar pruebas	2026-10-26T22:49:43.2430793Z # tests 26
+test	Ejecutar pruebas	2026-10-26T22:49:43.2431464Z # suites 7
+test	Ejecutar pruebas	2026-10-26T22:49:43.2432109Z # pass 26
+test	Ejecutar pruebas	2026-10-26T22:49:43.2432748Z # fail 0
+test	Ejecutar pruebas	2026-10-26T22:49:43.2433419Z # cancelled 0
+test	Ejecutar pruebas	2026-10-26T22:49:43.2434035Z # skipped 0
+test	Ejecutar pruebas	2026-10-26T22:49:43.2434685Z # todo 0
+test	Ejecutar pruebas	2026-10-26T22:49:43.2435360Z # duration_ms 225.941005
+test	Post Instalar Node.js	﻿2026-10-26T22:49:43.2654051Z Post job cleanup.
+test	Post Instalar Node.js	2026-10-26T22:49:43.3966411Z (node:2458) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Post Instalar Node.js	2026-10-26T22:49:43.3968199Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Post Run actions/checkout@v4	﻿2026-10-26T22:49:43.4249105Z Post job cleanup.
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.5386620Z [command]/usr/bin/git version
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.5479510Z git version 2.55.0
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.5630022Z Temporarily overriding HOME='/home/runner/work/_temp/4e86f6e5-311a-4b36-8def-10d9c8eeeaf0' before making global git config changes
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.5639422Z Adding repository directory to the temporary git global config as a safe directory
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.5641462Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ci-practica-equipo01/ci-practica-equipo01
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.5779921Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.5930764Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.6606808Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.6719200Z http.https://github.com/.extraheader
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.6759625Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.6851731Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.7629782Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Post Run actions/checkout@v4	2026-10-26T22:49:43.7697850Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Complete job	﻿2026-10-26T22:49:43.8261854Z Cleaning up orphan processes
+test	Complete job	2026-10-26T22:49:43.8649591Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
