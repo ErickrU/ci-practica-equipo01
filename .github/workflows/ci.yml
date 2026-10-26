@@ -1,0 +1,27 @@
+# Integración continua: se ejecuta en cada push y corre las pruebas unitarias.
+# Equivale al "Python CI" de la práctica, adaptado al stack real del proyecto
+# (JavaScript sin dependencias → Node.js + test runner nativo `node --test`).
+name: CI
+
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verificar sintaxis y manifest
+        run: npm run check
+
+      - name: Ejecutar pruebas
+        run: npm test
