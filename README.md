@@ -12,8 +12,8 @@ En lugar de una calculadora de ejemplo, el pipeline protege una aplicación real
 | Integrante | Rol |
 |---|---|
 | Erick Alexander Rangel Urbina | DevOps Engineer |
-| Leylani Jamileth Perea García | QA / Test Automation Engineer |
-| Diana Yamileika Tellez Ordoñez | Scrum Master / Product Owner |
+| Jose Eduardo Caballero Urrutia | QA / Test Automation Engineer |
+| Leydi Jaret Gallegos Badillo | Scrum Master / Product Owner |
 
 **Materia:** Gestión del Proceso de Desarrollo de Software · **Grupo:** IDyGS 101 · **Docente:** Netzer Gabriel Díaz Jaime
 
