@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Calculadora de Varillas · Columnas de concreto armado</title>
+  <meta name="description" content="Calcula cuántas varillas longitudinales necesita una columna de concreto armado a partir de sus dimensiones, materiales y cuantía o carga axial (NTP E.060 / ACI 318). Aplicación web progresiva instalable y con soporte offline.">
+
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="theme-color" content="#101820">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Iconos -->
+  <link rel="icon" href="./iconos/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./iconos/apple-touch-icon.png">
+
+  <!-- iOS: modo pantalla completa al instalar desde Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Varillas">
+
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <!-- ============================ CABECERA ============================ -->
+  <header class="cabecera" data-barra-titulo>
+    <div class="cabecera__marca">
+      <img class="cabecera__logo" src="./iconos/favicon.svg" alt="" width="44" height="44">
+      <div class="cabecera__texto">
+        <h1 class="cabecera__titulo">Calculadora de Varillas</h1>
+        <p class="cabecera__sub">Refuerzo longitudinal de columnas · NTP E.060</p>
+      </div>
+    </div>
+    <div class="cabecera__arrastre" aria-hidden="true"></div>
+    <nav class="cabecera__acciones" aria-label="Controles de la aplicación">
+      <button id="control-instalar" class="control-ventana" type="button" data-control-ventana aria-label="Instalar aplicación" title="Instalar aplicación">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14"/></svg><span>Instalar</span>
+      </button>
+      <button id="control-compartir" class="control-ventana" type="button" data-control-ventana aria-label="Compartir calculadora" title="Compartir calculadora">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.6-4.5m-7.6 6.9 7.6 4.5"/></svg><span>Compartir</span>
+      </button>
+      <button id="control-tema" class="control-ventana" type="button" data-control-ventana aria-label="Cambiar tema" title="Cambiar tema" aria-pressed="false">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.2A8 8 0 0 1 8.8 4 8 8 0 1 0 20 15.2Z"/></svg><span>Tema</span>
+      </button>
+      <button id="control-restablecer" class="control-ventana" type="button" data-control-ventana aria-label="Restablecer formulario" title="Restablecer formulario">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4v6h6M5.5 15a7 7 0 1 0 .4-7.5L4 10"/></svg><span>Restablecer</span>
+      </button>
+      <button id="control-ayuda" class="control-ventana" type="button" data-control-ventana aria-label="Abrir ayuda" title="Abrir ayuda">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.3 2.3 0 1 1 3.7 1.8c-1 .7-1.5 1.2-1.5 2.2m0 3.5h.01"/></svg><span>Ayuda</span>
+      </button>
+      <button id="control-widgets" class="control-ventana" type="button" data-control-ventana aria-label="Panel de widgets" title="Panel de widgets">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg><span>Widgets</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============================ BARRA DE ESTADO ============================ -->
+  <div class="estado" role="status" aria-live="polite" aria-atomic="true">
+    <span id="chip-conexion" class="chip chip--conexion" data-estado="en-linea">
+      <span class="punto" aria-hidden="true"></span><span class="chip__texto">En línea</span>
+    </span>
+    <span id="estado-sw" class="estado__texto"></span>
+  </div>
+
+  <dialog id="dialogo-ayuda" aria-labelledby="titulo-ayuda">
+    <div class="dialogo__contenido">
+      <button id="cerrar-ayuda" class="dialogo__cerrar" type="button" aria-label="Cerrar ayuda" title="Cerrar ayuda">×</button>
+      <h2 id="titulo-ayuda">Cómo usar la calculadora</h2>
+      <p>Completa los datos de la columna, selecciona el método y pulsa <strong>Calcular varillas</strong>. Los cálculos se realizan únicamente en tu dispositivo.</p>
+      <ul>
+        <li><strong>Instalar:</strong> añade la aplicación cuando el navegador lo permita.</li>
+        <li><strong>Compartir:</strong> envía o copia el enlace actual.</li>
+        <li><strong>Tema:</strong> alterna entre apariencia oscura y clara.</li>
+        <li><strong>Restablecer:</strong> recupera todos los valores iniciales.</li>
+        <li><strong>Ayuda:</strong> abre esta guía; también puedes cerrarla con Escape.</li>
+        <li><strong>Widgets:</strong> abre una simulación del panel de widgets de Windows 11 con tu último cálculo.</li>
+      </ul>
+      <p class="dialogo__nota">Herramienta académica: el diseño final debe revisarse con un ingeniero estructural.</p>
+    </div>
+  </dialog>
+
+  <main id="contenido" class="contenido">
+
+    <!-- ============================ FORMULARIO ============================ -->
+    <section class="tarjeta" aria-labelledby="titulo-datos">
+      <h2 id="titulo-datos" class="tarjeta__titulo">Datos de la columna</h2>
+      <p class="tarjeta__ayuda" id="ayuda-form">
+        Completa los datos y pulsa <strong>Calcular</strong>. Todas las medidas en centímetros y kg/cm².
+      </p>
+
+      <form id="form-columna" class="formulario" novalidate aria-describedby="ayuda-form">
+
+        <!-- Tipo de columna -->
+        <fieldset class="grupo">
+          <legend class="grupo__titulo">1. Tipo de columna</legend>
+          <div class="opciones" role="radiogroup" aria-label="Tipo de columna">
+            <label class="opcion">
+              <input type="radio" name="tipo" value="rectangular" id="tipo-rectangular" checked>
+              <span class="opcion__texto">
+                <span class="opcion__nombre">Rectangular</span>
+                <span class="opcion__detalle">con estribos · φ = 0,70</span>
+              </span>
+            </label>
+            <label class="opcion">
+              <input type="radio" name="tipo" value="circular" id="tipo-circular">
+              <span class="opcion__texto">
+                <span class="opcion__nombre">Circular</span>
+                <span class="opcion__detalle">con estribos · φ = 0,70</span>
+              </span>
+            </label>
+            <label class="opcion">
+              <input type="radio" name="tipo" value="espiral" id="tipo-espiral">
+              <span class="opcion__texto">
+                <span class="opcion__nombre">Circular</span>
+                <span class="opcion__detalle">con espiral · φ = 0,75</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Dimensiones -->
+        <fieldset class="grupo">
+          <legend class="grupo__titulo">2. Dimensiones de la sección</legend>
+
+          <div class="campos" id="grupo-rectangular">
+            <div class="campo">
+              <label class="campo__etiqueta" for="campo-b">Ancho <abbr title="base">b</abbr> <span class="campo__unidad">(cm)</span></label>
+              <input class="campo__control" type="number" id="campo-b" name="b" inputmode="decimal"
+                     min="1" step="any" value="30" required aria-describedby="error-b">
+              <p class="campo__error" id="error-b" role="alert" hidden></p>
+            </div>
+            <div class="campo">
+              <label class="campo__etiqueta" for="campo-h">Peralte <abbr title="altura de la sección">h</abbr> <span class="campo__unidad">(cm)</span></label>
+              <input class="campo__control" type="number" id="campo-h" name="h" inputmode="decimal"
+                     min="1" step="any" value="50" required aria-describedby="error-h">
+              <p class="campo__error" id="error-h" role="alert" hidden></p>
+            </div>
+          </div>
+
+          <div class="campos" id="grupo-circular" hidden>
+            <div class="campo">
+              <label class="campo__etiqueta" for="campo-D">Diámetro <abbr title="diámetro de la columna">D</abbr> <span class="campo__unidad">(cm)</span></label>
+              <input class="campo__control" type="number" id="campo-D" name="D" inputmode="decimal"
+                     min="1" step="any" value="40" aria-describedby="error-D">
+              <p class="campo__error" id="error-D" role="alert" hidden></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Materiales -->
+        <fieldset class="grupo">
+          <legend class="grupo__titulo">3. Materiales</legend>
+          <div class="campos">
+            <div class="campo">
+              <label class="campo__etiqueta" for="campo-fc">Resistencia del concreto <abbr title="f prima c">f'c</abbr> <span class="campo__unidad">(kg/cm²)</span></label>
+              <input class="campo__control" type="number" id="campo-fc" name="fc" inputmode="numeric"
+                     min="1" step="any" value="210" list="lista-fc" required aria-describedby="ayuda-fc error-fc">
+              <datalist id="lista-fc">
+                <option value="175"></option>
+                <option value="210"></option>
+                <option value="245"></option>
+                <option value="280"></option>
+                <option value="350"></option>
+                <option value="420"></option>
+              </datalist>
+              <p class="campo__ayuda" id="ayuda-fc">Usual: 210, 280 o 350.</p>
+              <p class="campo__error" id="error-fc" role="alert" hidden></p>
+            </div>
+            <div class="campo">
+              <label class="campo__etiqueta" for="campo-fy">Fluencia del acero <abbr title="f y">fy</abbr> <span class="campo__unidad">(kg/cm²)</span></label>
+              <input class="campo__control" type="number" id="campo-fy" name="fy" inputmode="numeric"
+                     min="1" step="any" value="4200" required aria-describedby="ayuda-fy error-fy">
+              <p class="campo__ayuda" id="ayuda-fy">Grado 60: 4200 kg/cm².</p>
+              <p class="campo__error" id="error-fy" role="alert" hidden></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Método -->
+        <fieldset class="grupo">
+          <legend class="grupo__titulo">4. ¿Cómo se determina el acero?</legend>
+          <div class="opciones" role="radiogroup" aria-label="Método de cálculo">
+            <label class="opcion">
+              <input type="radio" name="metodo" value="cuantia" id="metodo-cuantia" checked>
+              <span class="opcion__texto">
+                <span class="opcion__nombre">Por cuantía ρ</span>
+                <span class="opcion__detalle">As = ρ · Ag</span>
+              </span>
+            </label>
+            <label class="opcion">
+              <input type="radio" name="metodo" value="carga" id="metodo-carga">
+              <span class="opcion__texto">
+                <span class="opcion__nombre">Por carga axial Pu</span>
+                <span class="opcion__detalle">Pn,máx (E.060 10.3.6)</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="campos" id="grupo-cuantia">
+            <div class="campo">
+              <label class="campo__etiqueta" for="campo-cuantia">Cuantía de acero <abbr title="rho">ρ</abbr> <span class="campo__unidad">(%)</span></label>
+              <input class="campo__control" type="number" id="campo-cuantia" name="cuantia" inputmode="decimal"
+                     min="1" max="6" step="0.1" value="1" aria-describedby="ayuda-cuantia error-cuantia">
+              <p class="campo__ayuda" id="ayuda-cuantia">Entre 1 % y 6 % del área bruta (E.060 10.9.1).</p>
+              <p class="campo__error" id="error-cuantia" role="alert" hidden></p>
+            </div>
+          </div>
+
+          <div class="campos" id="grupo-carga" hidden>
+            <div class="campo">
+              <label class="campo__etiqueta" for="campo-pu">Carga axial última <abbr title="P u">Pu</abbr> <span class="campo__unidad">(tonf)</span></label>
+              <input class="campo__control" type="number" id="campo-pu" name="pu" inputmode="decimal"
+                     min="0" step="any" value="120" aria-describedby="ayuda-pu error-pu">
+              <p class="campo__ayuda" id="ayuda-pu">Carga factorizada (1,4 CM + 1,7 CV). Se asume compresión axial pura.</p>
+              <p class="campo__error" id="error-pu" role="alert" hidden></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Varilla y recubrimiento -->
+        <fieldset class="grupo">
+          <legend class="grupo__titulo">5. Varilla y recubrimiento</legend>
+          <div class="campos">
+            <div class="campo">
+              <label class="campo__etiqueta" for="campo-varilla">Diámetro de la varilla</label>
+              <select class="campo__control" id="campo-varilla" name="varilla" aria-describedby="ayuda-varilla error-varilla"></select>
+              <p class="campo__ayuda" id="ayuda-varilla">El estribo se elige automáticamente (E.060 7.10.5.1).</p>
+              <p class="campo__error" id="error-varilla" role="alert" hidden></p>
+            </div>
+            <div class="campo">
+              <label class="campo__etiqueta" for="campo-recubrimiento">Recubrimiento <span class="campo__unidad">(cm)</span></label>
+              <input class="campo__control" type="number" id="campo-recubrimiento" name="recubrimiento" inputmode="decimal"
+                     min="0" step="0.5" value="4" required aria-describedby="ayuda-recubrimiento error-recubrimiento">
+              <p class="campo__ayuda" id="ayuda-recubrimiento">Mínimo 4 cm en columnas (E.060 7.7.1).</p>
+              <p class="campo__error" id="error-recubrimiento" role="alert" hidden></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <div id="resumen-errores" class="aviso aviso--error" role="alert" hidden></div>
+
+        <div class="formulario__acciones">
+          <button class="boton boton--primario" type="submit" id="btn-calcular">Calcular varillas</button>
+          <button class="boton boton--fantasma" type="reset" id="btn-restablecer">Restablecer</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============================ RESULTADOS ============================ -->
+    <section class="tarjeta tarjeta--resultados" id="panel-resultados" aria-labelledby="titulo-resultado" aria-live="polite">
+      <h2 id="titulo-resultado" class="tarjeta__titulo">Resultado</h2>
+
+      <div id="resultado-vacio" class="vacio">
+        <svg class="vacio__icono" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect x="8" y="8" width="48" height="48" rx="4" fill="currentColor" opacity=".12"/>
+          <rect x="16" y="16" width="32" height="32" rx="2" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".7"/>
+          <circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="44" cy="20" r="3" fill="currentColor"/>
+          <circle cx="20" cy="44" r="3" fill="currentColor"/><circle cx="44" cy="44" r="3" fill="currentColor"/>
+          <circle cx="32" cy="20" r="3" fill="currentColor"/><circle cx="32" cy="44" r="3" fill="currentColor"/>
+        </svg>
+        <p>Ingresa los datos de la columna y pulsa <strong>Calcular varillas</strong> para ver cuántas barras necesita y cómo se distribuyen.</p>
+      </div>
+
+      <div id="resultado" hidden>
+        <p class="cifra">
+          <strong class="cifra__numero" id="res-n">–</strong>
+          <span class="cifra__texto">varillas de <span id="res-varilla">–</span></span>
+        </p>
+        <p class="resumen" id="res-distribucion"></p>
+        <p class="resumen resumen--secundario" id="res-estribo"></p>
+
+        <figure class="diagrama">
+          <div id="res-diagrama" class="diagrama__lienzo"></div>
+          <figcaption class="diagrama__pie" id="res-diagrama-pie">Sección transversal (esquemática, a escala).</figcaption>
+        </figure>
+
+        <h3 class="subtitulo">Detalle del cálculo</h3>
+        <dl class="detalles" id="res-detalles"></dl>
+
+        <div id="bloque-advertencias" class="aviso aviso--alerta" hidden>
+          <h3 class="aviso__titulo">Observaciones</h3>
+          <ul id="res-advertencias" class="aviso__lista"></ul>
+        </div>
+
+        <h3 class="subtitulo">Alternativas con otros diámetros</h3>
+        <div class="tabla-envoltorio">
+          <table class="tabla">
+            <caption class="visualmente-oculto">Número de varillas necesarias según el diámetro elegido</caption>
+            <thead>
+              <tr>
+                <th scope="col">Varilla</th>
+                <th scope="col">N.º</th>
+                <th scope="col">As (cm²)</th>
+                <th scope="col">ρ (%)</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody id="res-alternativas"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ PIE ============================ -->
+  <footer class="pie">
+    <p>
+      Basado en la NTP E.060 Concreto Armado (Perú), concordante con ACI 318: cuantía 1 %–6 % (10.9.1),
+      barras mínimas (10.9.2), Pn,máx (10.3.6), separación libre ≥ 1,5 db y 4 cm (7.6.3).
+    </p>
+    <p>Herramienta académica de apoyo: el diseño final debe verificarse con un ingeniero estructural.</p>
+  </footer>
+
+  <!-- Aviso de nueva versión del service worker -->
+  <div id="toast-actualizacion" class="toast" role="status" hidden>
+    <span>Hay una nueva versión disponible.</span>
+    <button id="btn-recargar" class="boton boton--primario boton--compacto" type="button">Actualizar</button>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+  <script type="module" src="./js/registro-sw.js"></script>
+</body>
+</html>

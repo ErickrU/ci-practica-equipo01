@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Reportar una vulnerabilidad
+    url: https://github.com/ErickrU/ci-practica-equipo01/security/advisories/new
+    about: Envía vulnerabilidades de forma privada; no abras un issue público.

@@ -1,0 +1,84 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Último cálculo · columna",
+      "size": "Small",
+      "weight": "Bolder",
+      "isSubtle": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${n}",
+              "size": "ExtraLarge",
+              "weight": "Bolder",
+              "color": "Accent"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "verticalContentAlignment": "Center",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "varillas de ${varilla}",
+              "size": "Medium",
+              "weight": "Bolder",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "${seccion}",
+              "size": "Small",
+              "isSubtle": true,
+              "spacing": "None",
+              "wrap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "${if(hayCalculo, distribucion, 'Aún no hay cálculos. Abre la calculadora para empezar.')}",
+      "size": "Small",
+      "wrap": true,
+      "spacing": "Small"
+    },
+    {
+      "type": "FactSet",
+      "spacing": "Medium",
+      "facts": [
+        { "title": "Estribo", "value": "${estribo}" },
+        { "title": "Recubrimiento", "value": "${recubrimiento} cm" },
+        { "title": "Cuantía", "value": "${cuantia} %" }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "${actualizadoTexto}",
+      "size": "Small",
+      "isSubtle": true,
+      "spacing": "Medium"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "Abrir calculadora",
+      "url": "${urlApp}"
+    }
+  ]
+}
