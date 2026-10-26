@@ -219,7 +219,7 @@ export function distribuir(seccion, n, varilla, estribo, recubrimiento) {
 
 /** φPn,máx en tonf para compresión axial pura (E.060 10.3.6). */
 export function resistenciaAxial(tipo, ag, ast, fc, fy) {
-  return (tipo.alfa * tipo.phi * (0.85 * fc * (ag - ast) - fy * ast)) / 1000;
+  return (tipo.alfa * tipo.phi * (0.85 * fc * (ag - ast) + fy * ast)) / 1000;
 }
 
 /* ==========================================================================
