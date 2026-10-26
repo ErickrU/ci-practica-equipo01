@@ -11,7 +11,7 @@
     "start": "node herramientas/servidor.mjs",
     "dev": "node herramientas/servidor.mjs --puerto 8080",
     "check": "node --check js/calculo.js && node --check js/app.js && node --check js/registro-sw.js && node --check js/widgets.js && node --check sw.js && node --check herramientas/servidor.mjs && node -e \"JSON.parse(require('fs').readFileSync('manifest.webmanifest', 'utf8'))\"",
-    "test": "node --test",
+    "test": "node --test --test-reporter=spec",
     "iconos": "bash herramientas/generar-iconos.sh"
   },
   "keywords": ["pwa", "service-worker", "concreto-armado", "columnas", "varillas", "e060", "utec", "ci", "github-actions"],
