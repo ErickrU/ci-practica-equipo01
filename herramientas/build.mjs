@@ -33,7 +33,6 @@ const DISTRIBUIBLES = [
   'js',
   'iconos',
   'widgets',
-  'robots.txt',
 ];
 
 if (SALIDA === RAIZ || !SALIDA.startsWith(RAIZ)) {
