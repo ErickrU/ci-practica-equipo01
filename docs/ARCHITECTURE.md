@@ -85,16 +85,23 @@ flowchart LR
     CO --> NODE[actions/setup-node\nNode.js 22]
     NODE --> CHK[npm run check\nsintaxis + manifest]
     CHK --> TEST[npm test\nnode --test]
-    TEST -->|✅ / ❌| GH
+    TEST --> BUILD[npm run build\nartefactos/]
+    BUILD --> ZIP[zip -r artefacto.zip]
+    ZIP --> ART[upload-artifact\nbuild-node]
+    ART -->|✅ / ❌| GH
 ```
 
-Cada `push` dispara el workflow `CI`, que ejecuta en un runner `ubuntu-latest` los mismos comandos que se usan en local (`npm run check` y `npm test`). El resultado queda asociado al commit: una marca verde indica que las fórmulas siguen produciendo los valores fijados por las pruebas; una marca roja bloquea la integración hasta corregir el defecto.
+Cada `push` dispara el workflow `CI Pipeline`, que ejecuta en un runner `ubuntu-latest` los mismos comandos que se usan en local (`npm run check`, `npm test` y `npm run build`). El resultado queda asociado al commit: una marca verde indica que las fórmulas siguen produciendo los valores fijados por las pruebas y que existe un artefacto descargable; una marca roja bloquea la integración hasta corregir el defecto y no publica ningún artefacto.
+
+La etapa **Build** (`herramientas/build.mjs`) no compila: copia a `artefactos/` la allowlist de archivos publicables (los mismos que precachea el service worker) y escribe `BUILD-INFO.json` con nombre, versión, commit, rama, número de ejecución y fecha. El paso **Generar ZIP** comprime esa carpeta y **Subir artefacto** la publica con `actions/upload-artifact@v4` bajo el nombre `build-node`, con 90 días de retención. Cualquier integrante descarga el mismo ZIP desde la pestaña Actions o con `gh run download <run> -n build-node`.
 
 Decisiones:
 
 1. **Test runner nativo de Node (`node:test`)**: no agrega dependencias al proyecto, que es una de sus reglas de diseño.
 2. **Las pruebas cubren solo `js/calculo.js`**: es el módulo sin DOM; la interfaz se verifica manualmente en el navegador según `CONTRIBUTING.md`.
-3. **Sin despliegue automático**: el pipeline es de integración continua, no de entrega continua. No usa secretos ni permisos adicionales.
+3. **Build por allowlist, sin bundler**: la aplicación ya se sirve tal cual, así que el artefacto es la carpeta publicable más metadatos de trazabilidad; no se introduce una herramienta de empaquetado solo para tener una.
+4. **Artefacto solo si las pruebas pasan**: los pasos se ejecutan en orden y cualquier fallo detiene el job, de modo que nunca se publica un ZIP construido a partir de código que rompe las pruebas.
+5. **Sin despliegue automático**: el pipeline es de integración continua con artefacto, no de entrega continua. No usa secretos ni permisos adicionales (`contents: read`).
 
 ## 6. Seguridad y privacidad
 
@@ -107,6 +114,7 @@ Amenazas consideradas:
 | Servidor de desarrollo expuesto en la red | `servidor.mjs` escucha solo en `127.0.0.1` |
 | Regresión silenciosa en una fórmula | Pruebas unitarias ejecutadas en cada `push` por GitHub Actions |
 | Secretos en el pipeline | El workflow no usa `secrets` ni credenciales |
+| Publicar archivos internos en el artefacto | `build.mjs` copia una allowlist explícita; pruebas, herramientas y plantillas quedan fuera |
 
 ## 7. Restricciones
 
@@ -114,3 +122,4 @@ Amenazas consideradas:
 - No hay sincronización entre dispositivos.
 - No hay observabilidad de negocio porque no hay backend.
 - La integración continua verifica el motor de cálculo; la interfaz, el service worker y la instalación como PWA requieren pruebas manuales en el navegador.
+- El artefacto `build-node` caduca a los 90 días (retención predeterminada de GitHub); una versión que deba conservarse se publica como release.

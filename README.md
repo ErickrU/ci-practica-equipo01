@@ -25,9 +25,10 @@ Comprobar que cada `git push` ejecuta automáticamente las pruebas del proyecto 
 |---|---|---|
 | 1. Repositorio | Repositorio `ci-practica-equipo01` con README | Este repositorio |
 | 2. Proyecto funcional | Aplicación + 26 pruebas unitarias del motor de cálculo | [`js/calculo.js`](js/calculo.js), [`test/calculo.test.mjs`](test/calculo.test.mjs) |
-| 3. GitHub Actions | Workflow `CI` que instala Node.js y ejecuta las pruebas en cada `push` | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) |
+| 3. GitHub Actions | Workflow `CI Pipeline` que instala Node.js y ejecuta las pruebas en cada `push` | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) |
 | 4. Verificación | Ejecución automática, duración y tareas realizadas | [Pestaña Actions](https://github.com/ErickrU/ci-practica-equipo01/actions) · [`docs/EVIDENCIA-CI.md`](docs/EVIDENCIA-CI.md) |
 | 5. Fallo intencional | Commit `Error intencional` que invierte un signo en una fórmula y hace fallar las pruebas; luego se corrige | [`docs/EVIDENCIA-CI.md`](docs/EVIDENCIA-CI.md) |
+| 6. Build automático | Etapa **Build** que genera la versión distribuible en `artefactos/`, la comprime y la publica como artefacto `build-node` | [`herramientas/build.mjs`](herramientas/build.mjs) · [Artifacts de cada run](https://github.com/ErickrU/ci-practica-equipo01/actions) |
 
 ## El pipeline
 
@@ -39,10 +40,13 @@ flowchart LR
     A --> B[actions/setup-node · Node.js 22]
     B --> C[npm run check]
     C --> D[npm test]
-    D -->|✅ pasa / ❌ falla| GH
+    D --> E[npm run build · artefactos/]
+    E --> F[zip -r artefacto.zip]
+    F --> G[upload-artifact · build-node]
+    G -->|✅ pasa / ❌ falla| GH
 ```
 
-`npm run check` valida la sintaxis de los módulos y el `manifest.webmanifest`; `npm test` ejecuta las pruebas con el test runner nativo de Node (`node --test`), sin instalar paquetes. Los mismos dos comandos se usan en local, así que lo que falla en GitHub falla igual en la máquina del desarrollador.
+`npm run check` valida la sintaxis de los módulos y el `manifest.webmanifest`; `npm test` ejecuta las pruebas con el test runner nativo de Node (`node --test`), sin instalar paquetes. Si ambos pasan, `npm run build` copia a `artefactos/` únicamente los archivos que un servidor web debe publicar (`index.html`, `offline.html`, `manifest.webmanifest`, `sw.js`, `css/`, `js/`, `iconos/`, `widgets/`) más un `BUILD-INFO.json` con versión, commit y número de ejecución; el ZIP resultante se publica como artefacto **`build-node`** en la pestaña Actions de cada run, listo para descargar y desplegar en cualquier hosting estático. Los mismos comandos se usan en local, así que lo que falla en GitHub falla igual en la máquina del desarrollador.
 
 ## Qué cubren las pruebas
 
@@ -64,6 +68,7 @@ git clone https://github.com/ErickrU/ci-practica-equipo01.git
 cd ci-practica-equipo01
 npm run check   # sintaxis + manifest
 npm test        # 26 pruebas unitarias
+npm run build   # genera artefactos/ (versión distribuible)
 npm start       # servidor local en http://localhost:8080 (solo escucha en 127.0.0.1)
 ```
 
@@ -117,9 +122,9 @@ ci-practica-equipo01/
 ├── css/estilos.css
 ├── iconos/                  Fuentes SVG y PNG para la PWA
 ├── widgets/                 Plantilla y datos del widget «Último cálculo»
-├── herramientas/            Servidor local, generador de iconos y verificador de widgets
+├── herramientas/            Servidor local, build.mjs (etapa Build), generador de iconos y verificador de widgets
 ├── index.html · offline.html · manifest.webmanifest · sw.js
-└── package.json             Scripts: start, check, test
+└── package.json             Scripts: start, check, test, build
 ```
 
 ## Documentación

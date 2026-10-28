@@ -28,9 +28,10 @@ Abre `http://localhost:8080/`. La aplicación no instala dependencias ni requier
 ```bash
 npm run check   # sintaxis de los módulos y validez del manifest
 npm test        # pruebas unitarias del motor de cálculo (node --test)
+npm run build   # genera artefactos/ con la versión distribuible
 ```
 
-Son exactamente los pasos que ejecuta el workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml) en cada `push`; si fallan localmente, fallarán en GitHub.
+Son exactamente los pasos que ejecuta el workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml) en cada `push`; si fallan localmente, fallarán en GitHub. `artefactos/` y `artefacto.zip` están en `.gitignore`: el artefacto se descarga desde la pestaña Actions del run, no se versiona. Si agregas un archivo nuevo que la aplicación necesite en producción, inclúyelo en la allowlist de `herramientas/build.mjs` y en el precache de `sw.js`.
 
 Después, prueba en el navegador:
 

@@ -19,6 +19,9 @@ coverage/
 *.key
 
 
+# Salida de la etapa Build (se genera en el pipeline, no se versiona)
+artefactos/
+artefacto.zip
 # Archivos temporales
 tmp-*
 *.tmp

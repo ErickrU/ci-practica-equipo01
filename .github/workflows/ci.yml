@@ -1,7 +1,8 @@
-# Integración continua: se ejecuta en cada push y corre las pruebas unitarias.
-# Equivale al "Python CI" de la práctica, adaptado al stack real del proyecto
-# (JavaScript sin dependencias → Node.js + test runner nativo `node --test`).
-name: CI
+# Pipeline de integración continua: en cada push ejecuta las pruebas y, si
+# pasan, construye la versión distribuible de la PWA y la publica como artefacto.
+# Equivale al "CI Pipeline" de la práctica, adaptado al stack real del proyecto
+# (JavaScript sin dependencias → Node.js, `node --test` y `npm run build`).
+name: CI Pipeline
 
 on:
   push:
@@ -10,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,3 +26,18 @@ jobs:
 
       - name: Ejecutar pruebas
         run: npm test
+
+      # Genera artefactos/ con los archivos publicables (index.html, sw.js,
+      # css/, js/, iconos/, widgets/...) y BUILD-INFO.json con commit y nº de run.
+      - name: Build proyecto
+        run: npm run build
+
+      - name: Generar ZIP
+        run: zip -r artefacto.zip artefactos
+
+      - name: Subir artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-node
+          path: artefacto.zip
+          if-no-files-found: error
